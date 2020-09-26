@@ -56,6 +56,7 @@ Navigation
     text-transform: uppercase;
     font-size: 1.1rem;
     box-shadow: var(--shadow);
+    font-weight: bolder;
 }
 
 .main-nav a:hover {
@@ -78,7 +79,7 @@ Top Container
 .showcase {
     grid-area: showcase;
     min-height: 400px;
-    background: url('https://blogsmedia.lse.ac.uk/blogs.dir/9/files/2019/07/code.jpg');
+    background: url('../images/IMG_20160615_193929.jpg');
     background-size: cover;
     background-position: center;
     padding: 3rem;
@@ -93,6 +94,7 @@ Top Container
 .showcase h1 {
     font-size: 4rem;
     margin-bottom: 0;
+    color: goldenrod;
 }
 
 .showcase p {
