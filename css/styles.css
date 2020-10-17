@@ -1,11 +1,11 @@
 :root {
   --primary: #ddd;
   --dark: #333;
-  --light: #ffffff;
-  --black: black;
-  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --light: #fff;
+  --box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
+/* Border box accounts the width and other padding in the total width. */
 html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,17 +18,22 @@ body {
   line-height: 1.4;
 }
 
+/* 1rem is by deafult 16px, rem tells the CSS to inherit from the HTML element */
 .btn {
-  background-color: var(--dark);
+  background: var(--dark);
   color: var(--light);
   padding: 0.6rem 1.3rem;
   text-decoration: none;
-  border: 0;
+  border: 0px;
   text-align: center;
 }
+.btn:hover {
+  text-transform: uppercase;
+}
 
+/* max-width allows the element to shrink */
 img {
-  max-width: 90%;
+  max-width: 100%;
 }
 
 #wrapper {
@@ -36,28 +41,26 @@ img {
   grid-gap: 20px;
 }
 
-/*
-Navigation
-*/
+/* Navgation */
 .main-nav ul {
   display: grid;
   grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
   padding: 0;
   list-style: none;
-  grid-template-columns: repeat(4, 1fr);
 }
 
 .main-nav a {
-  background-color: var(--primary);
+  background: var(--primary);
   display: block;
-  text-decoration: none;
   text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
   padding: 0.8rem;
   color: var(--dark);
-  text-transform: uppercase;
   font-size: 1.1rem;
-  box-shadow: var(--shadow);
   font-weight: bolder;
+  box-shadow: var(--box-shadow);
 }
 
 .main-nav a:hover {
@@ -66,9 +69,6 @@ Navigation
   box-shadow: 0 5px 10px rgba(104, 104, 104, 0.8);
 }
 
-/*
-Top Container
-*/
 .top-container {
   display: grid;
   grid-gap: 20px;
@@ -77,6 +77,9 @@ Top Container
     "showcase showcase top-box-b";
 }
 
+/* Use GRID to align the layouts
+   Use flexbox to align the elements/contents in the layouts
+*/
 .showcase {
   grid-area: showcase;
   min-height: 400px;
@@ -84,33 +87,36 @@ Top Container
   background-size: cover;
   background-position: center;
   padding: 3rem;
-  color: white;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
-  box-shadow: var(--shadow);
+  box-shadow: var(--box-shadow);
 }
 
 .showcase h1 {
+  color: var(--light);
   font-size: 4rem;
   margin-bottom: 0;
-  color: goldenrod;
 }
 
-.showcase p {
+.showcase h2 {
   font-size: 1.3rem;
   margin-top: 0;
+  color: var(--light);
 }
+
+/* 
+  Top box
+*/
 
 .top-box {
   background: var(--primary);
-  color: var(--dark);
-
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  display: grid;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow);
-  padding: 1.5rem;
 }
 
 .top-box .price {
@@ -125,9 +131,7 @@ Top Container
   grid-area: top-box-b;
 }
 
-/* 
-Boxes Section 
-*/
+/* Boxes */
 .boxes {
   display: grid;
   grid-gap: 20px;
@@ -136,53 +140,47 @@ Boxes Section
 
 .box {
   background: var(--primary);
-  color: var(--black);
+  box-shadow: var(--box-shadow);
   text-align: center;
   padding: 1.5rem 2rem;
-  box-shadow: var(--shadow);
 }
 
-/*
-Info 
-*/
+/* Info */
 .info {
   background: var(--primary);
-  box-shadow: var(--shadow);
+  box-shadow: var(--box-shadow);
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(2, 1fr);
   padding: 3rem;
 }
 
-/*
-PortFolio
-*/
+/* Portfolio */
 #portfolio {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  box-shadow: var(--shadow);
+  background: var(--primary);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
 }
 
 #portfolio img {
-  margin: 10px;
   width: 100%;
-  box-shadow: var(--shadow);
 }
-
-/*
- Footer 
-*/
+#portfolio img:hover {
+  box-shadow: 0 5px 10px rgba(104, 104, 104, 0.8);
+}
 footer {
-  text-align: center;
   background: var(--dark);
   color: var(--light);
+  text-align: center;
 }
 
-/*
-Media Queries
-*/
 @media (max-width: 700px) {
+  .main-nav ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .top-container {
     grid-template-areas:
       "showcase showcase"
@@ -193,18 +191,14 @@ Media Queries
     font-size: 2.5rem;
   }
 
-  .main-nav ul {
-    grid-template-columns: 1fr;
-  }
-
   .info {
     grid-template-columns: repeat(1, 1fr);
   }
 
   .info .btn {
-    display: block;
-    text-align: center;
     margin: auto;
+    text-align: center;
+    display: block;
   }
 }
 
