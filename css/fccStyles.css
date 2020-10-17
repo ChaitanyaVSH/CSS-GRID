@@ -1,12 +1,19 @@
+:root {
+  --box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
 body {
   background: lightyellow;
   font-family: fantasy;
+  margin: 30px 40px;
+  display: grid;
+  grid-gap: 20px;
 }
 
 /*
     Instead of using grid-template-columns and grid-template-rows, use grid-templates: rows/columns.
 */
-.container {
+.container1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 8px;
@@ -18,4 +25,30 @@ body {
   font-size: 50px;
   font-weight: bolder;
   text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  padding: 10px;
+  font-size: 50px;
+  box-shadow: var(--box-shadow);
+}
+
+.header {
+  background: lightsalmon;
+}
+
+.menu {
+  background: lightgreen;
+}
+
+.content {
+  background: pink;
+}
+
+.footer {
+  background: lightskyblue;
 }
