@@ -3,9 +3,12 @@ body {
   font-family: fantasy;
 }
 
+/*
+    Instead of using grid-template-columns and grid-template-rows, use grid-templates: rows/columns.
+*/
 .container {
   display: grid;
-  grid-template-columns: 100px auto 100px;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 8px;
 }
 
