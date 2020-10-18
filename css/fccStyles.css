@@ -81,6 +81,11 @@ body {
     * Using auto-fit along with minmax(X,1fr) will shread the empty space. //Highly responsive. 
   */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: repeat(2, 200px);
+
+  /*
+  * To auto spawn more rows, use grid-auto-rows: <>; 
+  grid-template-rows: repeat(2, 200px); 
+  */
+  grid-auto-rows: 200px;
   grid-gap: 8px;
 }
