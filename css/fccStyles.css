@@ -89,3 +89,17 @@ body {
   grid-auto-rows: 200px;
   grid-gap: 8px;
 }
+
+/*
+  Image grid
+*/
+.horizontal {
+  grid-column: span 2;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+.big {
+}
