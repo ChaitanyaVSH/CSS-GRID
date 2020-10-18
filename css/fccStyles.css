@@ -88,6 +88,7 @@ body {
   */
   grid-auto-rows: 200px;
   grid-gap: 8px;
+  grid-auto-flow: dense;
 }
 
 /*
