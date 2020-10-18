@@ -66,3 +66,16 @@ body {
   background: lightskyblue;
   grid-area: f;
 }
+
+/* 
+  Using Auto fit and Auto fill properties to auto responsiveness of the website.
+ */
+.autoFit {
+  display: grid;
+  /*
+    Using only auto-fit will leave the grid unfilled if there is some less space than the specified pixels.
+  */
+  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-rows: repeat(4, 200px);
+  grid-gap: 8px;
+}
