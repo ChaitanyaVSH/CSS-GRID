@@ -1,0 +1,172 @@
+/* 
+    * Core Styles
+    1. Body
+*/
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+p {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  margin: 0.5rem 0;
+  border: 1px solid white;
+}
+
+.btn:hover {
+  background: #eaeaea;
+  color: #333;
+}
+
+/* Header/ Showcase */
+#showcase {
+  min-height: 450px;
+  color: #fff;
+  text-align: center;
+}
+
+#showcase .bg-image {
+  position: absolute;
+  background: #333
+    url("https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+#showcase h1 {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+#showcase .content-wrap,
+#section-a .content-wrap,
+#section-c .content-wrap {
+  padding: 0 1.5rem;
+}
+
+/* Section A */
+#section-a {
+  background: #eaeaea;
+  color: black;
+  padding-bottom: 2em;
+}
+
+/* Section B */
+#section-b {
+  padding: 2em 1em 1em;
+}
+
+#section-b ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#section-b li {
+  margin-bottom: 1em;
+  background: white;
+  color: black;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+/* Section C */
+#section-c {
+  background: #eaeaea;
+  color: black;
+  padding-bottom: 2em;
+}
+
+/* Section D */
+#section-d .box {
+  padding: 2rem;
+  color: white;
+}
+
+#section-d .box:nth-child(1) {
+  background: #2690d4;
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  background: #000000;
+  color: white;
+  text-align: center;
+}
+
+footer a {
+  color: orange;
+}
+
+/* Adding Media Queries to make it look better on the bigger screens as it is the Mobile First Design. */
+/* Any styles under the below will be effective only when the width is greater or equal to 700px. */
+@media (min-width: 700px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25rem)) 1fr;
+  }
+
+  #section-a .content-text {
+    columns: 2;
+    column-gap: 2rem;
+  }
+
+  #section-a .content-text p {
+    padding-top: 0;
+  }
+
+  .content-wrap,
+  #section-b ul {
+    grid-column: 2/4;
+  }
+
+  .box,
+  footer div {
+    grid-column: span 2;
+  }
+
+  #section-b ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #section-b li {
+    width: 31%;
+  }
+}
