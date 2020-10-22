@@ -1,6 +1,9 @@
 /* 
     * Core Styles
     1. Body
+    2. img
+    3. H1 H2 H3 P
+    4. btn
 */
 
 body {
@@ -96,7 +99,7 @@ p {
 }
 
 #section-b li {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   background: white;
   color: black;
 }
@@ -167,6 +170,10 @@ footer a {
   }
 
   #section-b li {
+    /* 
+    flex: 1;
+    margin: 2px;
+     */
     width: 31%;
   }
 }
